@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'space-age';
+    src: url('../../../../assets/space\ age.ttf')
+}
+  
+.spaceText {
+    font-family: 'space-age';
+}
