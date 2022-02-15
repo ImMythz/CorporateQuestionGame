@@ -3,7 +3,7 @@ import QuestionTile from './QuestionTile';
 
 export default function QuestionRow() {
     return (
-        <div className='flex flex-row items-center h-1/6 w-full'>
+        <div className='flex flex-row items-center h-full w-full'>
             <QuestionTile />
             <QuestionTile />
             <QuestionTile />
