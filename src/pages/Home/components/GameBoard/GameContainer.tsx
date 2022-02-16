@@ -1,6 +1,7 @@
 import React from 'react';
 import QuestionRow from './QuestionComponents/QuestionRow';
 import QuestionRowAlt from './QuestionComponents/QuestionRowAlt';
+import FirstRow from './QuestionComponents/FirstRow';
 import './style.css';
 
 export default function GameContainer() {
@@ -12,7 +13,7 @@ export default function GameContainer() {
             </div>
             <div className='bg-navy h-full w-full'>
                 <div className='h-fit w-auto p-4'>
-                    <QuestionRow />
+                    <FirstRow />
                     <QuestionRow /> 
                     <QuestionRowAlt />
                     <QuestionRow />

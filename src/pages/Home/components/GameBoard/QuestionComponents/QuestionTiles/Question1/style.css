@@ -6,6 +6,12 @@
 }
 
 .modal_content {
-    background-color: white;
     position: absolute;
+}
+
+.popup-content {
+    margin: auto;
+    width: 50%;
+    background: transparent !important;
+    border: none !important;
 }
