@@ -6,3 +6,13 @@
 .spaceText {
     font-family: 'space-age';
 }
+
+.btn {
+    @apply font-bold py-2 px-4 rounded;
+  }
+  .btn-blue {
+    @apply bg-light-blue text-white;
+  }
+  .btn-blue:hover {
+    @apply bg-light-blue;
+  }
