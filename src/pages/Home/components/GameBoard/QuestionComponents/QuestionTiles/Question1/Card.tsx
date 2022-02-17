@@ -1,4 +1,5 @@
 import * as React from 'react';
+// import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -7,8 +8,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useForm } from 'react-hook-form';
-import type { FormEvent } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAnswer, setColor, clearTile } from '../../../../../../../redux/question1';
 
 const theme = createTheme({
     palette: {
@@ -30,30 +31,26 @@ const bull = (
   </Box>
 );
 
-// type FormData = {
-//     formAnswer: string;
-// }
-
-// const sendForm = (event: FormEvent<HTMLFormElement>) => {
-//     event.preventDefault();
-//     const name = event.target as typeof event.target & { 
-//         name: string 
-//     };
-//     console.log(name);
-// };
-
 export default function BasicCard() {
-    const [questionAnswer, setQuestionAnswer] = React.useState('');
+    // const [questionAnswer, setQuestionAnswer] = React.useState('');
     // const { register, handleSubmit } = useForm<FormData>();
+    const { answer } = useSelector((state: any) => state.question1);
+    const dispatch = useDispatch()
 
 
-    const submitAnswer = () => {
-        // event.preventDefault();
-        const answer = document.getElementById('answer') as HTMLInputElement;
-
-        console.log(answer.value);
-        setQuestionAnswer(answer.value);
+    const submitAnswer = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const answerText = document.getElementById('answerText') as HTMLInputElement;
+        dispatch(setColor())
+        dispatch(setAnswer(answerText.value));
+        // const history = useNavigate();
+        // history('/');
     }
+
+    const Tile = () => {
+        dispatch(clearTile());
+    }
+    // const answerText = document.getElementById('answerText') as HTMLInputElement;
 
     return (
         <Card sx={{ minWidth: 275 }}>
@@ -75,8 +72,9 @@ export default function BasicCard() {
                             display="flex"
                             alignItems="center"
                             justifyContent="center"
+                            onSubmit={submitAnswer}
                             >
-                            <TextField label="" variant="standard" id='answer' type='text'/>
+                            <TextField placeholder={answer} variant="standard" id='answerText' type='text'></TextField>
                         </Box>
                     </ThemeProvider>
                 </CardContent>
@@ -90,11 +88,10 @@ export default function BasicCard() {
             >
             <CardActions>
                 <Button 
-                    type='submit' 
                     className='!text-blue' 
                     size="small"
-                    onClick={submitAnswer}
-                    >Submit</Button>
+                    onClick={Tile}
+                    >Clear</Button>
             </CardActions>
             </Box>
         </Card>
