@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
+import type { FormEvent } from 'react';
 
 const theme = createTheme({
     palette: {
@@ -33,18 +34,23 @@ const bull = (
 //     formAnswer: string;
 // }
 
+// const sendForm = (event: FormEvent<HTMLFormElement>) => {
+//     event.preventDefault();
+//     const name = event.target as typeof event.target & { 
+//         name: string 
+//     };
+//     console.log(name);
+// };
+
 export default function BasicCard() {
     const [questionAnswer, setQuestionAnswer] = React.useState('');
     // const { register, handleSubmit } = useForm<FormData>();
 
-    // const onSubmit = handleSubmit((data) => {
-    //     console.log(data.formAnswer);
-    //     alert(JSON.stringify(data));
-    // });
 
     const submitAnswer = () => {
         // event.preventDefault();
         const answer = document.getElementById('answer') as HTMLInputElement;
+
         console.log(answer.value);
         setQuestionAnswer(answer.value);
     }
@@ -70,7 +76,7 @@ export default function BasicCard() {
                             alignItems="center"
                             justifyContent="center"
                             >
-                            <TextField label="" variant="standard" id='answer' type='text' onSubmit={submitAnswer}/>
+                            <TextField label="" variant="standard" id='answer' type='text'/>
                         </Box>
                     </ThemeProvider>
                 </CardContent>
