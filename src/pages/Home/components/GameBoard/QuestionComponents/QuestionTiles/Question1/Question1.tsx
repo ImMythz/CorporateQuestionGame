@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Popup from 'reactjs-popup';
-import Card from './Card';
+import  Card from './Card';
 import 'reactjs-popup/dist/index.css';
 import './style.css';
 

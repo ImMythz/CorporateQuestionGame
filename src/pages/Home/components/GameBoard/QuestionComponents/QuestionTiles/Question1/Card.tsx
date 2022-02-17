@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useForm } from 'react-hook-form';
 
 const theme = createTheme({
     palette: {
@@ -28,16 +29,24 @@ const bull = (
   </Box>
 );
 
-// interface Values {
-//     questionAnswer: string;
-// }
-// interface Props { 
-//     onSubmit: (values: Values) => void;
+// type FormData = {
+//     formAnswer: string;
 // }
 
 export default function BasicCard() {
+    const [questionAnswer, setQuestionAnswer] = React.useState('');
+    // const { register, handleSubmit } = useForm<FormData>();
+
+    // const onSubmit = handleSubmit((data) => {
+    //     console.log(data.formAnswer);
+    //     alert(JSON.stringify(data));
+    // });
+
     const submitAnswer = () => {
-        console.log('submit answer');
+        // event.preventDefault();
+        const answer = document.getElementById('answer') as HTMLInputElement;
+        console.log(answer.value);
+        setQuestionAnswer(answer.value);
     }
 
     return (
@@ -61,7 +70,7 @@ export default function BasicCard() {
                             alignItems="center"
                             justifyContent="center"
                             >
-                            <TextField id="standard-large" label="" variant="standard" />
+                            <TextField label="" variant="standard" id='answer' type='text' onSubmit={submitAnswer}/>
                         </Box>
                     </ThemeProvider>
                 </CardContent>
