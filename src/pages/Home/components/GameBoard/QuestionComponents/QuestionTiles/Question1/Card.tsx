@@ -10,6 +10,7 @@ import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAnswer, setColor, clearTile } from '../../../../../../../redux/question1';
+import questions from './../../../../../../../questions.json'
 
 const theme = createTheme({
     palette: {
@@ -32,8 +33,6 @@ const bull = (
 );
 
 export default function BasicCard() {
-    // const [questionAnswer, setQuestionAnswer] = React.useState('');
-    // const { register, handleSubmit } = useForm<FormData>();
     const { answer } = useSelector((state: any) => state.question1);
     const dispatch = useDispatch()
 
@@ -50,7 +49,6 @@ export default function BasicCard() {
     const Tile = () => {
         dispatch(clearTile());
     }
-    // const answerText = document.getElementById('answerText') as HTMLInputElement;
 
     return (
         <Card sx={{ minWidth: 275 }}>
@@ -60,7 +58,7 @@ export default function BasicCard() {
                 justifyContent="center">
                 <CardContent>
                     <Typography sx={{ fontSize: 22, mt: 3}} color="text.primary" gutterBottom>
-                    What software are we migratring our ERP system to?
+                    {questions[0].question}
                     </Typography>
                     <ThemeProvider theme={theme}>
                         <Box
