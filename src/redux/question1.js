@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const QuestionSlice = createSlice({
+export const Question1Reducer = createSlice({
     name: 'question1',
     initialState: {
         answer: '',
@@ -21,6 +21,6 @@ export const QuestionSlice = createSlice({
 });
 
 // The first argument is the name of the actions
-export const { setAnswer, setColor, clearTile } = QuestionSlice.actions;
+export const { setAnswer, setColor, clearTile } = Question1Reducer.actions;
 // The second argument is an object that describes the reducers
-export default QuestionSlice.reducer;
+export default Question1Reducer.reducer;
