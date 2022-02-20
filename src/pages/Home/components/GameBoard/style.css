@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'space-age';
-    src: url('../../../../assets/space\ age.ttf')
+    src: url('../../../../assets/space\ age.ttf');
+    font-display: swap;
 }
   
 .spaceText {

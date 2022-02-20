@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const Question15Reducer = createSlice({
-    name: 'question9',
+    name: 'question15',
     initialState: {
         answer: '',
         color: '',

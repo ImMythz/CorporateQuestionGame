@@ -5,10 +5,10 @@ import GameBoard from './components/GameBoard/GameBoard';
 
 export default function Home() {
     return (
-        <div>
+        <main className='flex flex-col items-center justify-center'>
             <Header />
             <GameBoard />
             <Footer />
-        </div>
+        </main>
     );
 }

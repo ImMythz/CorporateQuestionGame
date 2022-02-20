@@ -1,7 +1,7 @@
 import React from 'react';
 import Question11 from './QuestionTiles/Question11/Question11';
 import Question12 from './QuestionTiles/Question12/Question12';
-import FreeSpace from './QuestionTiles/FreeSpace';
+import FreeSpace from './QuestionTiles/FreeSpace/FreeSpace';
 import Question13 from './QuestionTiles/Question13/Question13';
 import Question14 from './QuestionTiles/Question14/Question14';
 
