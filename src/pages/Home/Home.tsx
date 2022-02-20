@@ -8,7 +8,6 @@ export default function Home() {
         <div>
             <Header />
             <GameBoard />
-            <div className=''></div>
             <Footer />
         </div>
     );

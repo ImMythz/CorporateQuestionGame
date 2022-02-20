@@ -9,13 +9,13 @@ import Home from './pages/Home/Home';
 
 export default function App() {
   return (
-    <div className="App">
+    <main className="App">
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
         </Routes>
       </Router>
-    </div>
+    </main>
   );
 }
 
