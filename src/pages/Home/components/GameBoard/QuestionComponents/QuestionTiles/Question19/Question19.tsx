@@ -7,11 +7,11 @@ import { useSelector } from 'react-redux';
 import questions from '../../../../../../../questions.json'
 
 
-export default function Question8() {
-    const { answer, color } = useSelector((state: any) => state.question8);
+export default function Question19() {
+    const { answer, color } = useSelector((state: any) => state.question19);
     return (
         <article className={`flex flex-col items-center justify-center h-40 w-40 bg-white blue border-2 border-navy ${color}`}>
-            <Popup trigger={<button className='h-fit w-full font-bold'>{questions[7].question}</button>} modal nested>
+            <Popup trigger={<button className='h-fit w-full font-bold'>{questions[18].question}</button>} modal nested>
                 <Card />
             </Popup>
             <div className='border-b-[1px] w-fit'>

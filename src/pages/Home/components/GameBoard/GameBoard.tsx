@@ -1,7 +1,7 @@
 import React from 'react';
 import GameContainer from './GameContainer';
 
-export default  function GameBoard() {
+export default function GameBoard() {
     return (
         <section className='flex flex-col items-center justify-center h-fit mb-16'>
             <GameContainer />

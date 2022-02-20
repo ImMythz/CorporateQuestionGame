@@ -1,8 +1,9 @@
 import React from 'react';
-import QuestionRow from './QuestionComponents/QuestionRow';
-import QuestionRowAlt from './QuestionComponents/QuestionRowAlt';
 import FirstRow from './QuestionComponents/FirstRow';
 import SecondRow from './QuestionComponents/SecondRow';
+import ThirdRow from './QuestionComponents/ThirdRow';
+import FourthRow from './QuestionComponents/FourthRow';
+import FifthRow from './QuestionComponents/FifthRow';
 import './style.css';
 
 export default function GameContainer() {
@@ -16,9 +17,9 @@ export default function GameContainer() {
                 <article className='h-fit w-auto p-4'>
                     <FirstRow />
                     <SecondRow />
-                    <QuestionRowAlt />
-                    <QuestionRow />
-                    <QuestionRow />
+                    <ThirdRow />
+                    <FourthRow />
+                    <FifthRow />
                 </article>
             </section>
         </section>

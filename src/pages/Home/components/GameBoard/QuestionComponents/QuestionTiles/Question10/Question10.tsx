@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import questions from '../../../../../../../questions.json'
 
 
-export default function Question6() {
+export default function Question10() {
     const { answer, color } = useSelector((state: any) => state.question10);
     return (
         <article className={`flex flex-col items-center justify-center h-40 w-40 bg-white blue border-2 border-navy ${color}`}>

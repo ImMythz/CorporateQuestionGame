@@ -9,6 +9,20 @@ import Question7Reducer from './question7'
 import Question8Reducer from './question8'
 import Question9Reducer from './question9'
 import Question10Reducer from './question10'
+import Question11Reducer from './question11'
+import Question12Reducer from './question12'
+import Question13Reducer from './question13'
+import Question14Reducer from './question14'
+import Question15Reducer from './question15'
+import Question16Reducer from './question16'
+import Question17Reducer from './question17'
+import Question18Reducer from './question18'
+import Question19Reducer from './question19'
+import Question20Reducer from './question20'
+import Question21Reducer from './question21'
+import Question22Reducer from './question22'
+import Question23Reducer from './question23'
+import Question24Reducer from './question24'
 
 export default configureStore({
   reducer: { 
@@ -22,6 +36,20 @@ export default configureStore({
     question8: Question8Reducer,
     question9: Question9Reducer,
     question10: Question10Reducer,
+    question11: Question11Reducer,
+    question12: Question12Reducer,
+    question13: Question13Reducer,
+    question14: Question14Reducer,
+    question15: Question15Reducer,
+    question16: Question16Reducer,
+    question17: Question17Reducer,
+    question18: Question18Reducer,
+    question19: Question19Reducer,
+    question20: Question20Reducer,
+    question21: Question21Reducer,
+    question22: Question22Reducer,
+    question23: Question23Reducer,
+    question24: Question24Reducer,
   },
 })
 
