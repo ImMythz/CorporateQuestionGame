@@ -9,8 +9,8 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAnswer, setColor, clearTile } from '../../../../../../../redux/question1';
-import questions from './../../../../../../../questions.json'
+import { setAnswer, setColor, clearTile } from '../../../../../../../redux/question4';
+import questions from '../../../../../../../questions.json'
 
 const theme = createTheme({
     palette: {
@@ -24,7 +24,7 @@ const theme = createTheme({
 }); 
 
 export default function BasicCard() {
-    const { answer } = useSelector((state: any) => state.question1);
+    const { answer } = useSelector((state: any) => state.question4);
     const dispatch = useDispatch()
 
 

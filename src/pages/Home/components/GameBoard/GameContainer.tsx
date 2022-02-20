@@ -2,6 +2,7 @@ import React from 'react';
 import QuestionRow from './QuestionComponents/QuestionRow';
 import QuestionRowAlt from './QuestionComponents/QuestionRowAlt';
 import FirstRow from './QuestionComponents/FirstRow';
+import SecondRow from './QuestionComponents/SecondRow';
 import './style.css';
 
 export default function GameContainer() {
@@ -14,7 +15,7 @@ export default function GameContainer() {
             <section className='bg-navy h-full w-full'>
                 <article className='h-fit w-auto p-4'>
                     <FirstRow />
-                    <QuestionRow /> 
+                    <SecondRow />
                     <QuestionRowAlt />
                     <QuestionRow />
                     <QuestionRow />
