@@ -24,4 +24,10 @@
     article {
         width: 100% !important;
     }
+    button {
+        font-size: 0.75rem !important;
+    }
+    p {
+        font-size: 0.75rem !important;
+    }
 }

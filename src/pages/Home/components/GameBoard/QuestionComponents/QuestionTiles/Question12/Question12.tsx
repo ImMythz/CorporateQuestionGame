@@ -14,9 +14,7 @@ export default function Question12() {
             <Popup trigger={<button className='h-fit w-full font-bold'>{questions[11].question}</button>} modal nested>
                 <Card />
             </Popup>
-            <div className='border-b-[1px] w-fit'>
-                <p className='answer1 w-full mt-2'>{answer}</p>
-            </div>
+            <p className='answer1 w-full mt-2'>{answer}</p>
         </article>
     );
 }

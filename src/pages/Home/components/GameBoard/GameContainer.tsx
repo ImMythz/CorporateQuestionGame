@@ -10,8 +10,8 @@ export default function GameContainer() {
     return (
         <section className='bg-navy h-fit w-fit mt-16 mb-16'>
             <article className='flex flex-col justify-center items-center h-36 w-full'>
-                <h1 className='spaceText flex text-white text-4xl'>TO A BILLION AND BEYOND</h1>
-                <h1 className='spaceText flex text-white text-6xl'>BINGO</h1>
+                <h1 id='topHeader' className='spaceText flex text-white text-4xl'>TO A BILLION AND BEYOND</h1>
+                <h1 id='bottomHeader' className='spaceText flex text-white text-6xl'>BINGO</h1>
             </article>
             <section className='bg-navy h-fit w-fit'>
                 <article className='h-fit w-fit p-4'>
