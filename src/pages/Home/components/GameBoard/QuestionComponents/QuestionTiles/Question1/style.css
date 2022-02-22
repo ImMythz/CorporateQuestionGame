@@ -21,10 +21,6 @@
     font-weight: 400 !important;
 }
 
-.tileButton {
-    font-size: 0.75rem !important;
-}
-
 .tileButton:hover {
     cursor: pointer;
 }
