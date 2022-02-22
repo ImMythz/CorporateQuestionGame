@@ -11,10 +11,12 @@ export default function Question16() {
     const { answer, color } = useSelector((state: any) => state.question16);
     return (
         <article className={`flex flex-col items-center justify-center h-40 w-40 bg-white blue border-2 border-navy ${color}`}>
-            <Popup trigger={<button className='h-fit w-full font-bold'>{questions[15].question}</button>} modal nested>
+            <Popup trigger={<div className='h-full w-full font-bold flex flex-col items-center justify-center tileButton'>
+                                {questions[15].question}
+                                <p className='answer1 w-fit mt-2'>{answer}</p>
+                            </div>} modal nested>
                 <Card />
             </Popup>
-            <p className='answer1 w-full mt-2'>{answer}</p>
         </article>
     );
 }
