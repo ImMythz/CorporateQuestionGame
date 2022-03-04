@@ -49,7 +49,7 @@ export default function BasicCard() {
                 justifyContent="center">
                 <CardContent>
                     <Typography sx={{ fontSize: 22, mt: 3}} color="text.primary" gutterBottom>
-                    {questions[0].question}
+                    {questions[14].question}
                     </Typography>
                     <ThemeProvider theme={theme}>
                         <Box
