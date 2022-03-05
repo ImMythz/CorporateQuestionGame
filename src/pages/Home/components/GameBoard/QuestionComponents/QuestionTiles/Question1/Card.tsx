@@ -41,6 +41,10 @@ export default function BasicCard() {
         dispatch(clearTile());
     }
 
+    const ModalClose = () => {
+        console.log('clicked')
+    }
+
     return (
         <Card sx={{ minWidth: 275, maxWidth: 'auto' }}>
             <Box 
@@ -80,7 +84,14 @@ export default function BasicCard() {
                     className='!text-blue' 
                     size="small"
                     onClick={Tile}
-                    >Clear</Button>
+                    >Clear
+                </Button>
+                <Button 
+                    className='!text-blue' 
+                    size="small"
+                    onClick={ModalClose}
+                    >Submit
+                </Button>
             </CardActions>
             </Box>
         </Card>
