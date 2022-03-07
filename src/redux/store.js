@@ -23,6 +23,7 @@ import Question21Reducer from './question21'
 import Question22Reducer from './question22'
 import Question23Reducer from './question23'
 import Question24Reducer from './question24'
+import modalState from './modal'
 
 export default configureStore({
   reducer: { 
@@ -50,6 +51,7 @@ export default configureStore({
     question22: Question22Reducer,
     question23: Question23Reducer,
     question24: Question24Reducer,
+    modalState: modalState,
   },
 })
 

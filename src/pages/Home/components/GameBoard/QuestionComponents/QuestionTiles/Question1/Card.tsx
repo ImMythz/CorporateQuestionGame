@@ -1,5 +1,6 @@
 import * as React from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -11,6 +12,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAnswer, setColor, clearTile } from '../../../../../../../redux/question1';
 import questions from './../../../../../../../questions.json'
+import { setThing } from './../../../../../../../redux/modal';
 
 const theme = createTheme({
     palette: {
@@ -26,6 +28,7 @@ const theme = createTheme({
 export default function BasicCard() {
     const { answer } = useSelector((state: any) => state.question1);
     const dispatch = useDispatch()
+    const closeThing = () => dispatch(setThing(false));
 
 
     const submitAnswer = (e: React.FormEvent<HTMLFormElement>) => {
@@ -41,8 +44,12 @@ export default function BasicCard() {
         dispatch(clearTile());
     }
 
-    const ModalClose = () => {
-        console.log('clicked')
+    const ModalClose = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const answerText = document.getElementById('answerText') as HTMLInputElement;
+        dispatch(setColor())
+        dispatch(setAnswer(answerText.value));
+        dispatch(setThing(false));
     }
 
     return (
@@ -87,7 +94,8 @@ export default function BasicCard() {
                     >Clear
                 </Button>
                 <Button 
-                    className='!text-blue' 
+                    component='form'
+                    className='!text-blue close' 
                     size="small"
                     onClick={ModalClose}
                     >Submit
