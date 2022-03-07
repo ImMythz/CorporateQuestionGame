@@ -11,6 +11,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAnswer, setColor, clearTile } from '../../../../../../../redux/question23';
 import questions from '../../../../../../../questions.json'
+import { setThing } from '../../../../../../../redux/modal';
 
 const theme = createTheme({
     palette: {
@@ -41,6 +42,14 @@ export default function BasicCard() {
         dispatch(clearTile());
     }
 
+    const ModalClose = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const answerText = document.getElementById('answerText') as HTMLInputElement;
+        dispatch(setColor())
+        dispatch(setAnswer(answerText.value));
+        dispatch(setThing(false));
+    }
+    
     return (
         <Card sx={{ minWidth: 275, maxWidth: 'auto' }}>
             <Box 
@@ -80,7 +89,15 @@ export default function BasicCard() {
                     className='!text-blue' 
                     size="small"
                     onClick={Tile}
-                    >Clear</Button>
+                    >Clear
+                </Button>
+                <Button 
+                    component='form'
+                    className='!text-blue close' 
+                    size="small"
+                    onClick={ModalClose}
+                    >Submit
+                </Button>
             </CardActions>
             </Box>
         </Card>
