@@ -28,7 +28,7 @@ const theme = createTheme({
 export default function BasicCard() {
     const { answer } = useSelector((state: any) => state.question1);
     const dispatch = useDispatch()
-    const closeThing = () => dispatch(setThing(false));
+    // const closeThing = () => dispatch(setThing(false));
 
 
     const submitAnswer = (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,55 +53,32 @@ export default function BasicCard() {
     }
 
     return (
-        <Card sx={{ minWidth: 275, maxWidth: 'auto' }}>
-            <Box 
-                display="flex"
-                alignItems="center"
-                justifyContent="center">
-                <CardContent>
-                    <Typography sx={{ fontSize: 22, mt: 3}} color="text.primary" gutterBottom>
-                    {questions[0].question}
-                    </Typography>
-                    <ThemeProvider theme={theme}>
-                        <Box
-                            component="form"
-                            sx={{
-                                '& > :not(style)': { m: 1, width: '100%' },
-                            }}
-                            noValidate
-                            display="flex"
-                            alignItems="center"
-                            justifyContent="center"
-                            onSubmit={submitAnswer}
-                            >
-                            <TextField placeholder={answer} variant="standard" id='answerText' type='text'></TextField>
-                        </Box>
-                    </ThemeProvider>
-                </CardContent>
-            </Box>
-            <Box
+        <Box 
             display="flex"
-            justifyContent="flex-end"
-            sx={{
-                '& > :not(style)': { mr: 3, mb: 3 },
-            }}
-            >
-            <CardActions>
-                <Button 
-                    className='!text-blue' 
-                    size="small"
-                    onClick={Tile}
-                    >Clear
-                </Button>
-                <Button 
-                    component='form'
-                    className='!text-blue close' 
-                    size="small"
-                    
-                    >Submit
-                </Button>
-            </CardActions>
-            </Box>
-        </Card>
+            alignItems="center"
+            justifyContent="center"
+            className="!rounded"
+        >
+            <CardContent>
+                <Typography sx={{ fontSize: 22, mt: 3}} color="text.primary" gutterBottom>
+                {questions[0].question}
+                </Typography>
+                <ThemeProvider theme={theme}>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& > :not(style)': { m: 1, width: '100%' },
+                        }}
+                        noValidate
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        onSubmit={submitAnswer}
+                        >
+                        <TextField placeholder={answer} variant="standard" id='answerText' type='text'></TextField>
+                    </Box>
+                </ThemeProvider>
+            </CardContent>
+        </Box>
     );
 }

@@ -3,16 +3,31 @@ import Popup from 'reactjs-popup';
 import  Card from './Card';
 import 'reactjs-popup/dist/index.css';
 import './style.css';
-import { useSelector} from 'react-redux';
+import Button from '@mui/material/Button';
+import CardActions from '@mui/material/CardActions';
+import Box from '@mui/material/Box';
+import { useSelector, useDispatch} from 'react-redux';
 import questions from './../../../../../../../questions.json'
-// import { setThing } from './../../../../../../../redux/modal';
+import { setAnswer, setColor, clearTile } from '../../../../../../../redux/question1';
 
 export default function Question1() {
     const { answer, color } = useSelector((state: any) => state.question1);
+    const dispatch = useDispatch()
+
+    const clear = () => {
+        dispatch(clearTile());
+    }
+    
+    const submit = () => {
+        const answerText = document.getElementById('answerText') as HTMLInputElement;
+        dispatch(setColor())
+        dispatch(setAnswer(answerText.value));
+    }
 
     return (
         <article className={`flex flex-col items-center justify-center h-40 w-40 bg-white blue border-2 border-navy ${color}`}>
-            <Popup  
+            <Popup
+                className='popup-content'
                 trigger={
                     <div className='h-full w-full font-bold flex flex-col items-center justify-center tileButton'>
                         {questions[0].question}
@@ -23,33 +38,39 @@ export default function Question1() {
                 nested
             >
                 {(close:any) => (
-                    <div className='modal'>
-                        <button className="close" onClick={close}>
-                        &times;
-                        </button>
+                    <div>
                         <Card/>
                         <div className="actions">
-                                <Popup
-                                    trigger={<button className="button"> Trigger </button>}
-                                    position="top center"
-                                    nested
-                                >
-                                    <span>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                    magni omnis delectus nemo, maxime molestiae dolorem numquam
-                                    mollitia, voluptate ea, accusamus excepturi deleniti ratione
-                                    sapiente! Laudantium, aperiam doloribus. Odit, aut.
-                                    </span>
-                                </Popup>
-                                <button
-                                    className="button"
-                                    onClick={() => {
-                                    console.log('modal closed ');
-                                    close();
-                                    }}
-                                >
-                                    close modal
-                                </button>
+                            <Box
+                                display="flex"
+                                justifyContent="flex-end"
+                                sx={{
+                                    '& > :not(style)': { mr: 3, mb: 3 },
+                                }}
+                            >
+                                <CardActions>
+                                    <Button 
+                                        className='!text-blue' 
+                                        size="small"
+                                        onClick={() => {
+                                            clear();
+                                            close();
+                                        }}
+                                        >Clear
+                                    </Button>
+                                    <Button
+                                        size='small'
+                                        className="!text-blue"
+                                        onClick={() => {
+                                            submit();
+                                            console.log('Hey Ron');
+                                            close();
+                                        }}
+                                    >
+                                        Submit
+                                    </Button>
+                                </CardActions>
+                            </Box>
                         </div>
                     </div>
                 )}
