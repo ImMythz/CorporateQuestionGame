@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Popup from 'reactjs-popup';
 import  Card from './Card';
 import 'reactjs-popup/dist/index.css';
 import './style.css';
-import Button from '@mui/material/Button';
-import CardActions from '@mui/material/CardActions';
-import Box from '@mui/material/Box';
 import { useSelector, useDispatch} from 'react-redux';
 import questions from './../../../../../../../questions.json'
 import { setAnswer, setColor, clearTile } from '../../../../../../../redux/question1';
+import Button from '@mui/material/Button';
+import CardActions from '@mui/material/CardActions';
+import Box from '@mui/material/Box'
 
 export default function Question1() {
     const { answer, color } = useSelector((state: any) => state.question1);
