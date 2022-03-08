@@ -3,29 +3,16 @@ import Popup from 'reactjs-popup';
 import  Card from './Card';
 import 'reactjs-popup/dist/index.css';
 import './style.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 import questions from './../../../../../../../questions.json'
-import { setThing } from './../../../../../../../redux/modal';
-
-// interface ModalProps {
-//     close: () => void;
-// }
+// import { setThing } from './../../../../../../../redux/modal';
 
 export default function Question1() {
     const { answer, color } = useSelector((state: any) => state.question1);
-    const { test } = useSelector((state: any) => state.modalState);
-    const dispatch = useDispatch()
-    const closeModal = () => dispatch(setThing(false));
-    // const ref = useRef();
-    // const closeTooltip = () => ref.current.close();
-    // const [open, setOpen] = useState(false);
 
     return (
         <article className={`flex flex-col items-center justify-center h-40 w-40 bg-white blue border-2 border-navy ${color}`}>
-            <Popup 
-                open={test} 
-                closeOnDocumentClick  
-                onClose={closeModal} 
+            <Popup  
                 trigger={
                     <div className='h-full w-full font-bold flex flex-col items-center justify-center tileButton'>
                         {questions[0].question}
@@ -35,7 +22,7 @@ export default function Question1() {
                 modal 
                 nested
             >
-                {close => (
+                {(close:any) => (
                     <div className='modal'>
                         <button className="close" onClick={close}>
                         &times;

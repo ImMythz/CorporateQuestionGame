@@ -97,7 +97,7 @@ export default function BasicCard() {
                     component='form'
                     className='!text-blue close' 
                     size="small"
-                    onClick={ModalClose}
+                    
                     >Submit
                 </Button>
             </CardActions>
